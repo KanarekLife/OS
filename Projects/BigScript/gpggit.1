@@ -1,0 +1,112 @@
+.\" Manpage for gpggit
+.\" Contact: Stanisław Nieradko <stanislaw@nieradko.com>
+.TH gpggit 1 "15.05.2023" "1.0" "GPGGit Manual"
+.SH NAME
+gpggit \- Script for easier uploading and downloading git repository with GPG encryption.
+.SH SYNOPSIS
+.B gpggit
+[\fIcommand\fR] [\fIoptions\fR]
+.SH DESCRIPTION
+The \fBgpggit\fR script is designed to simplify the process of uploading and downloading git repositories with GPG encryption. It provides various commands to initialize a new encrypted git repository, import an existing encrypted git repository, manage recipients' public keys, push and pull changes, and perform other repository operations.
+.SH OPTIONS
+The following options are supported:
+.TP
+.B init
+Initialize a new encrypted git repository.
+.TP
+.B import
+Import an existing encrypted git repository.
+.TP
+.B add-recipient \fIkey-file\fR
+Add a recipient's public key.
+.TP
+.B remove-recipient \fIemail\fR
+Remove a recipient by email.
+.TP
+.B restore-recipients
+Restore recipients' keys from the .gpggit/recipients directory.
+.TP
+.B push
+Push changes to the encrypted git repository.
+.TP
+.B pull
+Pull changes from the encrypted git repository.
+.TP
+.B add \fIfile\fR
+Add a file to the repository.
+.TP
+.B commit \fIargs\fR
+Commit changes to the repository.
+.TP
+.B status
+Show the repository status.
+.TP
+.B push-local
+Push changes to the local git repository.
+.TP
+.B pull-local
+Pull changes from the local git repository.
+.TP
+.B -h
+Display usage help.
+.TP
+.B -v
+Display script version information.
+.SH EXAMPLES
+Initialize a new encrypted git repository:
+.B
+gpggit init
+.PP
+Import an existing encrypted git repository:
+.B
+gpggit import <remote-url>
+.PP
+Add a recipient's public key:
+.B
+gpggit add-recipient <key-file>
+.PP
+Remove a recipient by email:
+.B
+gpggit remove-recipient <email>
+.PP
+Restore recipients' keys:
+.B
+gpggit restore-recipients
+.PP
+Push changes to the encrypted git repository:
+.B
+gpggit push
+.PP
+Pull changes from the encrypted git repository:
+.B
+gpggit pull
+.PP
+Add a file to the repository:
+.B
+gpggit add <file>
+.PP
+Commit changes to the repository:
+.B
+gpggit commit <args>
+.PP
+Show the repository status:
+.B
+gpggit status
+.PP
+Push changes to the local git repository:
+.B
+gpggit push-local
+.PP
+Pull changes from the local git repository:
+.B
+gpggit pull-local
+.SH AUTHOR
+Stanisław Nieradko <stanislaw@nieradko.com>
+.SH COPYRIGHT
+Licensed under GPL. See /usr/share/common-licenses/GPL for more details or contact the Free Software Foundation for a copy.
+.SH SEE ALSO
+The git(1) command, the gpg(1) command.
+.SH BUGS
+No known bugs.
+.SH VERSION
+1.0
